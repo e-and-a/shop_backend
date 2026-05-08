@@ -14,6 +14,9 @@
 - django-cors-headers
 - python-dotenv
 - Pillow
+- pytest, pytest-django, pytest-cov
+- Hypothesis для fuzzing-тестов
+- React, Vite, TypeScript для frontend
 
 ## Архитектура
 
@@ -43,6 +46,15 @@ cp .env.example .env
 python manage.py migrate
 python manage.py seed_data
 python manage.py runserver
+```
+
+Frontend:
+
+```bash
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
 ```
 
 ## PostgreSQL
@@ -79,7 +91,7 @@ SECRET_KEY=change-me
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
 DATABASE_URL=postgresql://shop_user:shop_password@localhost:5432/shop_db
-CORS_ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
+CORS_ALLOWED_ORIGINS=http://localhost:5173,http://127.0.0.1:5173,http://localhost:3000,http://127.0.0.1:3000
 JWT_ACCESS_TOKEN_LIFETIME_MINUTES=60
 JWT_REFRESH_TOKEN_LIFETIME_DAYS=7
 ```
@@ -94,11 +106,22 @@ python manage.py seed_data
 python manage.py runserver
 ```
 
+Тесты backend:
+
+```bash
+pytest
+pytest --cov=apps
+```
+
+Тесты используют `config.test_settings` и SQLite in-memory базу, чтобы не требовать отдельную тестовую PostgreSQL-базу. В набор входят API-тесты и fuzzing-тесты для фильтров товаров и количества в корзине.
+
 ## Документация API
 
+- Backend: `http://127.0.0.1:8000`
 - Swagger UI: `http://127.0.0.1:8000/api/docs/`
 - ReDoc: `http://127.0.0.1:8000/api/redoc/`
 - OpenAPI schema: `http://127.0.0.1:8000/api/schema/`
+- Frontend: `http://127.0.0.1:5173`
 
 В Swagger UI доступна JWT Bearer авторизация. Получите access token через `/api/v1/auth/login/`, затем нажмите `Authorize` и вставьте токен в формате `Bearer <access_token>`.
 
