@@ -1,0 +1,410 @@
+:root {
+  color: #172026;
+  background: #f5f7f8;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button,
+.primary-link {
+  border: 0;
+  border-radius: 8px;
+  background: #176b87;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 14px;
+  font-weight: 700;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.secondary-button,
+.ghost-button {
+  background: #e5eef1;
+  color: #17313a;
+}
+
+.danger-button {
+  background: #b42318;
+}
+
+.app-shell {
+  min-height: 100vh;
+}
+
+.site-header {
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #d9e2e6;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: auto 1fr auto;
+  padding: 14px 28px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  color: #176b87;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.main-nav,
+.user-menu,
+.button-row,
+.row-heading {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.main-nav a,
+.user-menu a {
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.main-nav a.active,
+.user-menu a.active {
+  background: #e5eef1;
+}
+
+.content {
+  margin: 0 auto;
+  max-width: 1240px;
+  padding: 30px 24px 60px;
+}
+
+.hero {
+  align-items: center;
+  background: linear-gradient(135deg, #d9eef4 0%, #f7fafb 60%);
+  border-radius: 8px;
+  display: flex;
+  min-height: 420px;
+  padding: 50px;
+}
+
+.hero h1 {
+  font-size: 52px;
+  margin: 0 0 14px;
+}
+
+.hero p {
+  font-size: 20px;
+  line-height: 1.5;
+  max-width: 680px;
+}
+
+.page-heading {
+  margin-bottom: 24px;
+}
+
+.page-heading h1,
+section > h1 {
+  margin-top: 0;
+}
+
+.filters,
+.manager-form,
+.form-grid {
+  background: #fff;
+  border: 1px solid #d9e2e6;
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  margin-bottom: 24px;
+  padding: 16px;
+}
+
+.filters {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.manager-form {
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.manager-form.compact {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+label {
+  display: grid;
+  gap: 6px;
+}
+
+input,
+select,
+textarea {
+  border: 1px solid #c9d5da;
+  border-radius: 8px;
+  min-width: 0;
+  padding: 10px 12px;
+}
+
+textarea {
+  min-height: 96px;
+  resize: vertical;
+}
+
+.product-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+}
+
+.product-card,
+.panel,
+.auth-panel,
+.empty-state,
+.stat-card {
+  background: #fff;
+  border: 1px solid #d9e2e6;
+  border-radius: 8px;
+}
+
+.product-card {
+  overflow: hidden;
+}
+
+.product-image {
+  align-items: center;
+  aspect-ratio: 16 / 10;
+  background: #d9eef4;
+  color: #176b87;
+  display: flex;
+  font-size: 24px;
+  font-weight: 800;
+  justify-content: center;
+}
+
+.product-image img,
+.detail-media img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.product-card-body,
+.panel,
+.auth-panel,
+.empty-state,
+.stat-card {
+  padding: 18px;
+}
+
+.product-title {
+  display: block;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.product-meta,
+.checkout-summary,
+.pagination {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.rating-line {
+  color: #53656d;
+  margin: 10px 0;
+}
+
+.pagination {
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.detail-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+}
+
+.detail-media {
+  align-items: center;
+  aspect-ratio: 1;
+  background: #d9eef4;
+  border-radius: 8px;
+  color: #176b87;
+  display: flex;
+  font-size: 28px;
+  font-weight: 800;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.price-line {
+  color: #176b87;
+  font-size: 32px;
+  font-weight: 900;
+  margin: 18px 0;
+}
+
+.spec-list > div,
+.table-row {
+  align-items: center;
+  border-bottom: 1px solid #e6edf0;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr auto auto auto;
+  padding: 14px 16px;
+}
+
+.spec-list dt {
+  color: #53656d;
+}
+
+.wide-panel {
+  grid-column: 1 / -1;
+}
+
+.review-item {
+  background: #fff;
+  border: 1px solid #d9e2e6;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  padding: 14px;
+}
+
+.table-list {
+  background: #fff;
+  border: 1px solid #d9e2e6;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cart-row,
+.review-row {
+  grid-template-columns: 1fr auto auto auto;
+}
+
+.stepper {
+  align-items: center;
+  display: flex;
+  gap: 8px;
+}
+
+.checkout-summary {
+  background: #fff;
+  border: 1px solid #d9e2e6;
+  border-radius: 8px;
+  margin-top: 18px;
+  padding: 18px;
+}
+
+.page-status {
+  margin: 80px auto;
+  max-width: 520px;
+  text-align: center;
+}
+
+.alert {
+  background: #fff7d6;
+  border: 1px solid #f3c64e;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  padding: 12px;
+}
+
+.alert.error {
+  background: #fff0f0;
+  border-color: #df8a8a;
+}
+
+.narrow,
+.auth-panel {
+  margin: 0 auto;
+  max-width: 560px;
+}
+
+.narrow-form {
+  margin-top: 18px;
+  max-width: 560px;
+}
+
+.dashboard-grid,
+.stats-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.dashboard-card {
+  background: #fff;
+  border: 1px solid #d9e2e6;
+  border-radius: 8px;
+  font-weight: 800;
+  padding: 22px;
+}
+
+.stat-card span {
+  color: #53656d;
+  display: block;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 28px;
+  margin-top: 8px;
+}
+
+.checkbox-line {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: 320px;
+    padding: 28px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-row,
+  .cart-row,
+  .review-row {
+    grid-template-columns: 1fr;
+  }
+}
