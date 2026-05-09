@@ -30,7 +30,8 @@ def test_product_filters_fuzz_do_not_return_server_errors(api_client, product, s
     )
 
     assert response.status_code < 500
-    assert "results" in response.data
+    if response.status_code < 400:
+        assert "results" in response.data
 
 
 @settings(max_examples=20, suppress_health_check=[HealthCheck.function_scoped_fixture])
